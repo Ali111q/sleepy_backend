@@ -51,14 +51,16 @@ public async Task<(List<MusicDto> musics, int? totalCount, string? error)> GetAl
 }
 
 public async Task<(Music? music, string? error)> Update(Guid id ,MusicUpdate musicUpdate)
-    {
-        throw new NotImplementedException();
-      
-    }
+{
+    var data = await _repositoryWrapper.Music.Update(_mapper.Map<Music>(musicUpdate), id);
+    return (data, null);
+
+}
 
 public async Task<(Music? music, string? error)> Delete(Guid id)
     {
-        throw new NotImplementedException();
+        var data = await _repositoryWrapper.Music.Delete(id);
+        return (data, null);
    
     }
 

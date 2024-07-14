@@ -49,15 +49,16 @@ public async Task<(List<CategoryDto> categorys, int? totalCount, string? error)>
 }
 
 public async Task<(Category? category, string? error)> Update(Guid id ,CategoryUpdate categoryUpdate)
-    {
-        throw new NotImplementedException();
-      
-    }
+{
+    var category = await _repositoryWrapper.Category.Update(_mapper.Map<Category>(categoryUpdate), id);
+    return (category, null);
+}
 
 public async Task<(Category? category, string? error)> Delete(Guid id)
-    {
-        throw new NotImplementedException();
-   
-    }
+{
+    var category = await _repositoryWrapper.Category.SoftDelete(id);
+    return (category, null);
+
+}
 
 }

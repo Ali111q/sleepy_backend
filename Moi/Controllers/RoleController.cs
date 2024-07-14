@@ -23,6 +23,9 @@ public class RoleController: BaseController
     public async Task<ActionResult> AddPermissionToRole([FromBody] AssignPermissionsForm form) =>
         Ok(await _roleService.AddPermissionToRole(form.RoleId, form.Permissions));
     
-    [HttpGet]
+    [HttpGet("/api/get-permissions")]
     public async Task<ActionResult> GetPermissions([FromQuery] PermissionsFilter filter) => Ok(await _roleService.GetAllPermissions(filter));
+
+    [HttpGet]
+    public async Task<ActionResult> GetAll() => Ok(await _roleService.GetAll());
 }
