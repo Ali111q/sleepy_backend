@@ -1,0 +1,8 @@
+﻿CREATE INDEX idx_clearances_vehicle_id ON "Clearances" ("VehicleId");
+CREATE INDEX idx_vehicles_plate_character_id ON "Vehicles" ("PlateCharacterId");
+CREATE INDEX idx_vehicles_plate_type_id ON "Vehicles" ("PlateTypeId");
+CREATE INDEX idx_vehicles_vehicle_type_id ON "Vehicles" ("VehicleTypeId");
+CREATE INDEX idx_vehicles_vehicle_model_id ON "Vehicles" ("VehicleModelId");
+CREATE INDEX idx_plate_characters_governorate_id ON "PlateCharacters" ("GovernorateId");
+CREATE INDEX idx_vehicle_receipt_paths_vehicle_id ON "VehicleReceiptPaths" ("VehicleId");
+CREATE INDEX idx_vehicle_receipt_paths_expired_date ON "VehicleReceiptPaths" ("ExpiredDate");

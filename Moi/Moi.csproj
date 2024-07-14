@@ -1,0 +1,54 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>GaragesStructure</RootNamespace>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <DocumentationFile>bin\Debug\BackEndStructuer.xml</DocumentationFile>
+      <NoWarn>1701;1702,1591</NoWarn>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+        <PackageReference Include="BCrypt.Net" Version="0.1.0" />
+        <PackageReference Include="EPPlus" Version="7.0.10" />
+        <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+        <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.9.0" />
+        <PackageReference Include="Grpc.AspNetCore" Version="2.60.0" />
+        <PackageReference Include="Hangfire.AspNetCore" Version="1.8.7" />
+        <PackageReference Include="Hangfire.Dashboard.Authorization" Version="3.0.1" />
+        <PackageReference Include="Hangfire.MemoryStorage" Version="1.8.0" />
+        <PackageReference Include="Hangfire.PostgreSql" Version="1.20.5" />
+        <PackageReference Include="iTextSharp.LGPLv2.Core" Version="3.4.18" />
+        <PackageReference Include="MicroElements.Swashbuckle.FluentValidation" Version="6.0.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.0" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.5" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.0" />
+        <PackageReference Include="OneSignalApi" Version="2.0.2" />
+        <PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+        <PackageReference Include="TextExtensions" Version="1.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="DATA\Migrations\" />
+        <Folder Include="Helpers\HangFire\" />
+        <Folder Include="Migrations\" />
+        <Folder Include="View\" />
+        <Folder Include="wwwroot\Attachments\" />
+        <Folder Include="wwwroot\Logo\" />
+        <Folder Include="wwwroot\MigrationsFile\" />
+    </ItemGroup>
+
+
+</Project>
