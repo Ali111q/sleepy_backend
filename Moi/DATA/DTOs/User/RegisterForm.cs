@@ -20,6 +20,8 @@ namespace GaragesStructure.DATA.DTOs.User
         [Required]
         public Guid? Role { get; set; }
 
+        public int Gender { get; set; }
+
     }
 }
 

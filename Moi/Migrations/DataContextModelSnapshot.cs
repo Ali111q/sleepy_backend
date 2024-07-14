@@ -106,6 +106,9 @@ namespace GaragesStructure.Migrations
                     b.Property<string>("FullName")
                         .HasColumnType("text");
 
+                    b.Property<int>("Gender")
+                        .HasColumnType("integer");
+
                     b.Property<bool?>("IsActive")
                         .HasColumnType("boolean");
 

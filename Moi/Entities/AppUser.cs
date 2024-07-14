@@ -23,6 +23,7 @@ namespace GaragesStructure.Entities
 
         public TimeOnly SleepTime { get; set; }
         public int SleepHours { get; set; }
+        public int Gender { get; set; }
 
     }
     

@@ -1,0 +1,6 @@
+﻿services:
+  moi:
+    image: moi
+    build:
+      context: .
+      dockerfile: Moi/Dockerfile

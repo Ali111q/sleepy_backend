@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace GaragesStructure.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240712173215_my")]
-    partial class my
+    [Migration("20240714145309_mig")]
+    partial class mig
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -108,6 +108,9 @@ namespace GaragesStructure.Migrations
 
                     b.Property<string>("FullName")
                         .HasColumnType("text");
+
+                    b.Property<int>("Gender")
+                        .HasColumnType("integer");
 
                     b.Property<bool?>("IsActive")
                         .HasColumnType("boolean");

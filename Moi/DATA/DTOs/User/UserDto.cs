@@ -15,5 +15,6 @@ namespace GaragesStructure.DATA.DTOs.User
         public CountryDto? Country { get; set; }
         
         public bool? IsActive { get; set; }
+        public int Gender { get; set; }
     }
 }

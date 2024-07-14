@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace GaragesStructure.Migrations
 {
     /// <inheritdoc />
-    public partial class my : Migration
+    public partial class mig : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -156,6 +156,7 @@ namespace GaragesStructure.Migrations
                     CountryId = table.Column<Guid>(type: "uuid", nullable: true),
                     SleepTime = table.Column<TimeOnly>(type: "time without time zone", nullable: false),
                     SleepHours = table.Column<int>(type: "integer", nullable: false),
+                    Gender = table.Column<int>(type: "integer", nullable: false),
                     Deleted = table.Column<bool>(type: "boolean", nullable: true),
                     CreationDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
                 },

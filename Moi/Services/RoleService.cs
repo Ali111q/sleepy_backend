@@ -10,7 +10,7 @@ namespace GaragesStructure.Services
 {
     public interface IRoleService
     {
-        Task<(List<RoleDto>? roles, int? totalCount, string? error)> GetAll();
+        Task<(List<RoleDto>? roles, int? totalCount, string? error)> GetAll(Rolefilter filter);
 
         Task<(RoleDto? role, string? error)> Add(RoleForm role);
 
@@ -38,10 +38,10 @@ namespace GaragesStructure.Services
             _dataContext = dataContext;
         }
 
-        public async Task<(List<RoleDto>? roles, int? totalCount, string? error)> GetAll()
+        public async Task<(List<RoleDto>? roles, int? totalCount, string? error)> GetAll(Rolefilter filter)
         {
-            var (data, totalCount) = await _repositoryWrapper.Role.GetAll<RoleDto>(0);
-            return (_mapper.Map<List<RoleDto>>(data), totalCount, null);
+            var (data, totalCount) = await _repositoryWrapper.Role.GetAll<RoleDto>(filter.PageNumber, filter.PageSize, filter.Deleted);
+            return (data, totalCount, null);
         }
 
         public async Task<(RoleDto? role, string? error)> Add(RoleForm roleForm)
