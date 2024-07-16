@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace GaragesStructure.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240714145309_mig")]
-    partial class mig
+    [Migration("20240716050912_my")]
+    partial class my
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,6 +34,9 @@ namespace GaragesStructure.Migrations
                     b.Property<string>("ArtUrl")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<int>("Color")
+                        .HasColumnType("integer");
 
                     b.Property<DateTime?>("CreationDate")
                         .HasColumnType("timestamp with time zone");
