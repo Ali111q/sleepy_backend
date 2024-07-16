@@ -29,5 +29,5 @@ public class RoleController: BaseController
 
     [HttpGet]
     public async Task<ActionResult<List<RoleDto>>> GetAll([FromQuery] Rolefilter rolefilter) => Ok(await _roleService.GetAll(rolefilter), rolefilter.PageNumber);
-
+    
 }

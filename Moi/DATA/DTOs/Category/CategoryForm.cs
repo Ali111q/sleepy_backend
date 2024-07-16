@@ -5,6 +5,6 @@ namespace BackEndStructuer.DATA.DTOs
     {
         public string Name { get; set; }
         public string ArtUrl { get; set; }
-        public int Color { get; set; }
+        public string Color { get; set; }
     }
 }
