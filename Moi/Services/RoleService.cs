@@ -132,7 +132,6 @@ namespace GaragesStructure.Services
 
             return (allPermissionsDto, null);
         }
-
         public async Task<(string? role, string? error)> AddPermissionToRole(Guid roleId,
             AssignPermissionsDto assignPermissions)
         {
@@ -157,7 +156,6 @@ namespace GaragesStructure.Services
                         var permissionEntity = permissionMap[permissionName];
                         role.RolePermissions.Add(new RolePermission { Role = role, Permission = permissionEntity });
                     }
-                    
                 }
 
                 await _dataContext.SaveChangesAsync();

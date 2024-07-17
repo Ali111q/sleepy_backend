@@ -18,7 +18,7 @@ namespace GaragesStructure.Migrations
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     Name = table.Column<string>(type: "text", nullable: false),
                     ArtUrl = table.Column<string>(type: "text", nullable: false),
-                    Color = table.Column<int>(type: "integer", nullable: false),
+                    Color = table.Column<string>(type: "text", nullable: false),
                     Deleted = table.Column<bool>(type: "boolean", nullable: true),
                     CreationDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
                 },

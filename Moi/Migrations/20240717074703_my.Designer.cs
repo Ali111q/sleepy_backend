@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace GaragesStructure.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240716050912_my")]
+    [Migration("20240717074703_my")]
     partial class my
     {
         /// <inheritdoc />
@@ -35,8 +35,9 @@ namespace GaragesStructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("Color")
-                        .HasColumnType("integer");
+                    b.Property<string>("Color")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<DateTime?>("CreationDate")
                         .HasColumnType("timestamp with time zone");
