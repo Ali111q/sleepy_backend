@@ -26,7 +26,7 @@ public class RoleController: BaseController
     
     [HttpGet("/api/get-permissions")]
     public async Task<ActionResult> GetPermissions([FromQuery] PermissionsFilter filter) => Ok(await _roleService.GetAllPermissions(filter));
-
+    
     [HttpGet]
     public async Task<ActionResult<List<RoleDto>>> GetAll([FromQuery] Rolefilter rolefilter) => Ok(await _roleService.GetAll(rolefilter), rolefilter.PageNumber);
     

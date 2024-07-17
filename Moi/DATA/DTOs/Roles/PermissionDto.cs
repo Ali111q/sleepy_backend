@@ -11,5 +11,6 @@ namespace GaragesStructure.DATA.DTOs.roles{
     public class ActionDetailDto{
         public Guid Id { get; set; }
         public string Action { get; set; }
+        public bool Active { get; set; }
     }
 }

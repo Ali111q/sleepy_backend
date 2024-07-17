@@ -31,7 +31,7 @@ namespace GaragesStructure.Helpers
             CreateMap<AppUser, AppUser>();
 
             CreateMap<Permission, PermissionDto>();
-
+            CreateMap<Permission, MyPermissionDto>();
 
             CreateMap<Country, CountryDto>();
             CreateMap<CountryForm, Country>();

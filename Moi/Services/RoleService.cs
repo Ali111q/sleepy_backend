@@ -157,6 +157,7 @@ namespace GaragesStructure.Services
                         var permissionEntity = permissionMap[permissionName];
                         role.RolePermissions.Add(new RolePermission { Role = role, Permission = permissionEntity });
                     }
+                    
                 }
 
                 await _dataContext.SaveChangesAsync();
@@ -175,24 +176,26 @@ namespace GaragesStructure.Services
         public async Task<(AllPermissionsDto? permissionDtos, string? error)> GetAllPermissions(
             PermissionsFilter filter)
         {
-            var (data, totalCount) = await _repositoryWrapper.Permission.GetAll(
-                x => (
-                    (filter.RoleId == null || x.RolePermissions.Any(rp => rp.Role.Id == filter.RoleId))
-                )
-                , 0);
+            var (data, totalCount) = await _repositoryWrapper.Permission.GetAll<MyPermissionDto>(
+                
+                 0);
 
             
             // group permissions by subject
 
             var groupedPermissions = data
                 .GroupBy(p => p.Subject)
-                .Select(group => new PermissionDto
+                .Select((group) => new PermissionDto
                 {
                     Subject = group.Key,
-                    Actions = group.Select((p, index) => new ActionDetailDto
+                    Actions = group.Select((p, index) =>
                     {
-                        Id = p.Id, // Or any other logic to assign Id
-                        Action = p.Action,
+                        return new ActionDetailDto
+                        {
+                            Id = p.Id, // Or any other logic to assign Id
+                            Action = p.Action,
+                            Active = p.RolePermissions.Any(e=>e.RoleId==filter.RoleId)
+                        };
                     }).ToList()
                 }).ToList();
 
